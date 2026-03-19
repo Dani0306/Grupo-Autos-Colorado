@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
+/* ============================================================
+   GRUPO AUTOS COLORADO — Design System
+   Luxury automotive. Dark. Precise. Colombian excellence.
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --- Core Backgrounds --- */
+  --background: #080808; /* Near-absolute black — hero & page base */
+  --background-soft: #111111; /* Elevated surfaces (cards, sections) */
+  --background-muted: #1a1a1a; /* Subtle depth layers, input fields */
+  --background-subtle: #222222; /* Borders, dividers, hover fills */
+
+  /* --- Foreground / Text --- */
+  --foreground: #f5f5f0; /* Primary text — warm off-white */
+  --foreground-muted: #a3a39e; /* Secondary text, captions, meta */
+  --foreground-faint: #5a5a56; /* Placeholder text, disabled states */
+
+  /* --- Brand Gold (Primary Accent) ---
+       The signature color seen in "PREMIUM", badges, CTAs.
+       Deep amber-gold that reads luxury without being garish. */
+  --gold: #c9a84c; /* Core brand gold */
+  --gold-light: #e2c47a; /* Hover / highlight state */
+  --gold-dim: #8a6e2f; /* Pressed / active state */
+  --gold-subtle: #2a1f0a; /* Gold-tinted background tints */
+
+  /* --- Neutral Chrome ---
+       For UI chrome: borders, skeleton, rule lines. */
+  --chrome: #2e2e2e; /* Borders and rule lines */
+  --chrome-strong: #444444; /* Stronger dividers */
+
+  /* --- Status / Feedback --- */
+  --success: #3a7d44; /* Positive confirmations */
+  --error: #b94040; /* Errors, warnings */
+
+  /* --- Foreground & Background aliases (Next.js convention) --- */
+  --foreground-base: var(--foreground);
+  --background-base: var(--background);
 }
 
+/* ============================================================
+   Tailwind Theme Extension
+   ============================================================ */
 @theme inline {
+  /* Map CSS vars → Tailwind color tokens */
   --color-background: var(--background);
+  --color-background-soft: var(--background-soft);
+  --color-background-muted: var(--background-muted);
+  --color-background-subtle: var(--background-subtle);
+
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-faint: var(--foreground-faint);
+
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dim: var(--gold-dim);
+  --color-gold-subtle: var(--gold-subtle);
+
+  --color-chrome: var(--chrome);
+  --color-chrome-strong: var(--chrome-strong);
+
+  --color-success: var(--success);
+  --color-error: var(--error);
+
+  /* Typography */
+  --font-display: var(
+    --font-geist-sans
+  ); /* Headings — swap for a condensed display font */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================================
+   Base Styles
+   ============================================================ */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), "Helvetica Neue", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ============================================================
+   Utility Helpers (opt-in classes)
+   ============================================================ */
+
+/* Gold gradient text — for hero headlines like "PREMIUM", "COLORADO" */
+.text-gold-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--gold-light) 0%,
+    var(--gold) 50%,
+    var(--gold-dim) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle gold glow for buttons / badges */
+.glow-gold {
+  box-shadow:
+    0 0 20px rgba(201, 168, 76, 0.25),
+    0 0 60px rgba(201, 168, 76, 0.08);
+}
+
+/* Hairline gold border */
+.border-gold-hairline {
+  border: 1px solid rgba(201, 168, 76, 0.35);
+}
+
+/* Card surface */
+.surface {
+  background-color: var(--background-soft);
+  border: 1px solid var(--chrome);
+}
+
+/* Section divider */
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.4;
 }
