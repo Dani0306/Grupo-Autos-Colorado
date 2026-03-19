@@ -22,7 +22,7 @@ const LandingCard = ({
 
 const LandingCards = () => {
   return (
-    <div className="mx-auto flex flex-col items-center justify-center my-40 space-y-20">
+    <div className="mx-auto flex flex-col items-center justify-center my-20 space-y-20">
       <h2 className="text-2xl md:text-3xl italic lg:text-4xl font-black uppercase leading-none tracking-tight text-foreground">
         Estándar <span className="text-gold">Colorado.</span>
       </h2>
