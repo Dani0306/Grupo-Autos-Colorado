@@ -1,16 +1,16 @@
-import React from "react";
-import ImageComponent from "../shared/ImageComponent";
+import Image from "next/image";
 
 const History = () => {
   return (
-    <div className="mx-auto flex items-center flex-col md:flex-row space-y-8 justify-center my-40 px-6">
-      <div className="relative">
-        <ImageComponent
-          className="object-fit w-full md:w-100 h-150 mx-auto md:mx-8"
+    <div className="mx-auto flex items-center flex-col md:flex-row space-y-8 justify-center my-30 px-6">
+      <div className="relative w-full md:w-100 h-80 md:h-150 mx-auto md:mx-8">
+        <Image
+          className="object-cover"
           src="/carinside.jpg"
           alt="car inside"
+          fill // ← let it fill the parent div instead of fixed w/h on the image itself
         />
-        <div className="w-45 h-25 absolute  flex flex-col justify-center items-center bottom-0 left-0 bg-gold glow-gold text-black">
+        <div className="w-45 h-25 absolute flex flex-col justify-center items-center bottom-0 left-0 bg-gold glow-gold text-black">
           <span className="text-3xl font-extrabold tracking-tighter">100%</span>
           <span className="font-semibold text-sm">Garantía</span>
         </div>
