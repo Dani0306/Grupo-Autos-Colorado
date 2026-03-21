@@ -51,7 +51,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4 pt-2">
             <Button
               fill
-              text="Explorar Inventario"
+              text="Explorar Catálogo"
               className="w-50 md:w-60 h-12 md:h-15 text-xs! md:text-sm!"
             />
           </div>
