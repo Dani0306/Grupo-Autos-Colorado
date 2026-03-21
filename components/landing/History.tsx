@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const History = () => {
@@ -32,6 +33,10 @@ const History = () => {
           compromiso es crecer junto a ti, construyendo una reputación sólida a
           través de cada negocio realizado.
         </p>
+        <span className="flex space-x-2 hover:text-gold-light hover:border-gold-light transition-all duration-200 cursor-pointer items-center text-gold font-semibold border-b border-gold w-max pb-1 px-2 mt-2">
+          <p>Nuestra visión</p>
+          <ArrowRight className="size-4" />
+        </span>
       </div>
     </div>
   );
