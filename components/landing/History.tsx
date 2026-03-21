@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const History = () => {
   return (
-    <div className="mx-auto flex items-center flex-col md:flex-row space-y-8 justify-center my-20 px-6">
+    <div className="mx-auto flex items-center flex-col md:flex-row space-y-8 justify-center my-40 px-6">
       <div className="relative w-full md:w-100 h-80 md:h-150 mx-auto md:mx-8">
         <Image
           className="object-cover"
