@@ -53,13 +53,7 @@ const Catalog = () => {
       <h2 className="text-2xl md:text-3xl italic lg:text-4xl font-black uppercase leading-none tracking-tight text-foreground">
         Elige tu <span className="text-gold">vehículo ideal.</span>
       </h2>
-      <div className="flex flex-wrap gap-8 items-center justify-center relative">
-        <div className="absolute -top-10 right-0">
-          <span className=" text-sm flex space-x-2 hover:text-gold-light hover:border-gold-light transition-all duration-200 cursor-pointer items-center text-gold font-semibold w-max pb-1 px-2 mt-2">
-            <p>Ver Todo</p>
-            <ArrowRight className="size-4" />
-          </span>
-        </div>
+      <div className="flex flex-wrap gap-8 items-center justify-center">
         {CARS_INFO.map((item) => (
           <CarCard
             key={item.km}
@@ -72,6 +66,13 @@ const Catalog = () => {
           />
         ))}
       </div>
+
+      <Button
+        text="Ver Cátalogo Completo"
+        className="text-[11px]"
+        logo={ArrowRight}
+        fill={false}
+      />
     </div>
   );
 };
