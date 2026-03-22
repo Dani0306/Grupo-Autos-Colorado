@@ -3,19 +3,31 @@
 import { Menu, X } from "lucide-react";
 import Button from "../shared/Button";
 import Logo from "../shared/Logo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useInviewCustom } from "@/hooks/shared/useInViewCustom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   const { ref, inView } = useInviewCustom();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) setIsScrolled(true);
+      else setIsScrolled(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header>
       <nav
         ref={ref}
-        className={`fixed top-0 left-0 w-full z-50 flex items-center py-6 justify-between px-4 lg:px-8 opacity-0 ${inView && "fade-in"}`}
+        className={`${isScrolled && "bg-[#080808]"} transition-colors duration-500 fixed top-0 left-0 w-full z-50 flex items-center py-6 justify-between px-4 lg:px-8 opacity-0 ${inView && "fade-in"}`}
       >
         <Logo />
 
