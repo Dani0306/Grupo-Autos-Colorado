@@ -4,7 +4,7 @@ import { Facebook, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <div className="flex items-start justify-between flex-wrap px-4 md:px-6 mb-20 gap-10">
+    <div className="flex items-start justify-between flex-wrap px-6 md:px-12 mb-20 gap-10">
       <div className="flex flex-col space-y-4 max-w-80">
         <div className="flex space-x-4 items-center">
           <Logo />
@@ -17,7 +17,7 @@ const Footer = () => {
           inquebrantable.
         </p>
       </div>
-      <div className="flex flex-col space-y-4 min-w-70">
+      <div className="flex flex-col space-y-4">
         <span className="uppercase text-gold text-sm font-bold cursor-pointer hover:text-gold-light transition-all duration-200">
           Arquitectura
         </span>
@@ -35,7 +35,7 @@ const Footer = () => {
         </span>
       </div>
 
-      <div className="flex flex-col space-y-5 min-w-70">
+      <div className="flex flex-col space-y-5">
         <span className="uppercase text-gold text-sm font-bold cursor-pointer hover:text-gold-light transition-all duration-200">
           contacto
         </span>
@@ -47,7 +47,7 @@ const Footer = () => {
         </span>
       </div>
 
-      <div className="flex flex-col space-y-5 min-w-70">
+      <div className="flex flex-col space-y-5">
         <span className="uppercase text-gold text-sm font-bold cursor-pointer hover:text-gold-light transition-all duration-200">
           Síguenos
         </span>
