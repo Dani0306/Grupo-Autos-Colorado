@@ -44,7 +44,7 @@ const Catalog = () => {
       <h2 className="text-2xl md:text-3xl italic lg:text-4xl font-black uppercase leading-none tracking-tight text-foreground">
         Elige tu <span className="text-gold">vehículo ideal.</span>
       </h2>
-      <div className="flex flex-wrap gap-4 items-center justify-center">
+      <div className="flex flex-wrap space-x-4 space-y-8 items-center justify-center">
         {CARS_INFO.map((item) => (
           <CarCard
             key={item.km}
