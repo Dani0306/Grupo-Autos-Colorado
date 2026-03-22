@@ -4,13 +4,19 @@ import { Menu, X } from "lucide-react";
 import Button from "../shared/Button";
 import Logo from "../shared/Logo";
 import { useState } from "react";
+import { useInviewCustom } from "@/hooks/shared/useInViewCustom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const { ref, inView } = useInviewCustom();
+
   return (
     <header>
-      <nav className="fixed top-0 left-0 w-full z-50 flex items-center py-6 justify-between px-4 lg:px-8">
+      <nav
+        ref={ref}
+        className={`fixed top-0 left-0 w-full z-50 flex items-center py-6 justify-between px-4 lg:px-8 opacity-0 ${inView && "fade-in"}`}
+      >
         <Logo />
 
         <div className="hidden md:inline">

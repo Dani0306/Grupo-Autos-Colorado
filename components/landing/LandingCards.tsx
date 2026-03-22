@@ -1,4 +1,7 @@
+"use client";
+
 import { LANDING_CARDS_INFO } from "@/data/landing/cardsInfo";
+import { useInviewCustom } from "@/hooks/shared/useInViewCustom";
 import { LucideIcon } from "lucide-react";
 import React from "react";
 
@@ -21,8 +24,13 @@ const LandingCard = ({
 };
 
 const LandingCards = () => {
+  const { ref, inView } = useInviewCustom();
+
   return (
-    <div className="mx-auto flex flex-col items-center justify-center my-20 space-y-20">
+    <div
+      ref={ref}
+      className={`mx-auto flex flex-col items-center justify-center my-20 space-y-20 opacity-0 ${inView && "slide-left"}`}
+    >
       <h2 className="text-2xl md:text-3xl italic lg:text-4xl font-black uppercase leading-none tracking-tight text-foreground">
         Estándar <span className="text-gold">Colorado.</span>
       </h2>

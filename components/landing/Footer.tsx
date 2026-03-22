@@ -1,10 +1,17 @@
-import React from "react";
+"use client";
+
 import Logo from "../shared/Logo";
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import { useInviewCustom } from "@/hooks/shared/useInViewCustom";
 
 const Footer = () => {
+  const { ref, inView } = useInviewCustom();
+
   return (
-    <div className="flex items-start justify-between flex-wrap px-6 md:px-12 mb-20 gap-10">
+    <div
+      ref={ref}
+      className={`flex items-start justify-between flex-wrap px-6 md:px-12 mb-20 gap-10 opacity-0 ${inView && "fade-in"}`}
+    >
       <div className="flex flex-col space-y-4 max-w-80">
         <div className="flex space-x-4 items-center">
           <Logo />

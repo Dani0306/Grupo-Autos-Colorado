@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Button from "../shared/Button";
+import { useInviewCustom } from "@/hooks/shared/useInViewCustom";
 
 export default function Hero() {
+  const { ref, inView } = useInviewCustom();
+
   return (
     <section className="relative inset-0 w-full h-dvh min-h-150 flex items-center overflow-hidden">
       {/* ── 1. BACKGROUND IMAGE ── */}
@@ -27,7 +32,10 @@ export default function Hero() {
       <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent" />
 
       {/* ── 3. CONTENT ── */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+      <div
+        ref={ref}
+        className={`relative z-10 w-full max-w-7xl opacity-0 mx-auto px-6 md:px-12 lg:px-20 ${inView && "slide-up"}`}
+      >
         <div className="max-w-2xl flex flex-col gap-6">
           {/* Eyebrow label */}
           <span className="inline-flex items-center gap-2 text-gold text-xs tracking-[0.2em] uppercase font-medium">
@@ -59,7 +67,9 @@ export default function Hero() {
       </div>
 
       {/* ── 4. SCROLL INDICATOR (optional) ── */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-50">
+      <div
+        className={`${inView && "slide-up"} opacity-0 absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-50`}
+      >
         <span className="text-foreground-muted text-[10px] tracking-[0.2em] uppercase">
           Scroll
         </span>

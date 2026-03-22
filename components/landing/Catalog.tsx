@@ -1,8 +1,11 @@
+"use client";
+
 import { CARS_INFO } from "@/data/landing/carsInfo";
 import Button from "../shared/Button";
 import ImageComponent from "../shared/ImageComponent";
 import { formatToCOP } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { useInviewCustom } from "@/hooks/shared/useInViewCustom";
 
 const CarCard = ({
   name,
@@ -40,8 +43,13 @@ const CarCard = ({
 };
 
 const Catalog = () => {
+  const { ref, inView } = useInviewCustom();
+
   return (
-    <div className="mx-auto items-center flex flex-col px-4 lg:px-6 space-y-16 my-30">
+    <div
+      ref={ref}
+      className={`mx-auto items-center flex flex-col px-4 lg:px-6 space-y-16 my-30 opacity-0 ${inView && "slide-right"}`}
+    >
       <h2 className="text-2xl md:text-3xl italic lg:text-4xl font-black uppercase leading-none tracking-tight text-foreground">
         Elige tu <span className="text-gold">vehículo ideal.</span>
       </h2>

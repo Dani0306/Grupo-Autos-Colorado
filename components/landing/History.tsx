@@ -1,9 +1,17 @@
+"use client";
+
+import { useInviewCustom } from "@/hooks/shared/useInViewCustom";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const History = () => {
+  const { ref, inView } = useInviewCustom();
+
   return (
-    <div className="mx-auto flex items-center flex-col md:flex-row space-y-8 justify-center my-40 px-6">
+    <div
+      ref={ref}
+      className={`mx-auto flex items-center flex-col md:flex-row space-y-8 justify-center my-40 px-6 opacity-0 ${inView && "slide-left"}`}
+    >
       <div className="relative w-full md:w-100 h-80 md:h-150 mx-auto md:mx-8">
         <Image
           className="object-cover"
