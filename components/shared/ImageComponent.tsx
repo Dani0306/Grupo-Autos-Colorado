@@ -13,7 +13,12 @@ const ImageComponent = ({
 }) => {
   return (
     <div className={`relative ${className}`}>
-      <Image fill alt={alt} src={src} className={rounded && "rounded-full"} />
+      <Image
+        fill
+        alt={alt}
+        src={src}
+        className={`${rounded && "rounded-full"} object-cover`}
+      />
     </div>
   );
 };

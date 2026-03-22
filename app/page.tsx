@@ -1,3 +1,4 @@
+import Catalog from "@/components/landing/Catalog";
 import ContactButton from "@/components/landing/ContactButton";
 import Footer from "@/components/landing/Footer";
 import Header from "@/components/landing/Header";
@@ -10,6 +11,7 @@ export default function Home() {
     <main className="">
       <Header />
       <Hero />
+      <Catalog />
       <ContactButton />
       <LandingCards />
       <History />
